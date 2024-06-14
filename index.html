@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Upload</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/navbar.css">
+    <link rel="stylesheet" href="./style/location.css">
+    <link rel="stylesheet" href="./style/textToSpeech.css">
+    <link rel="stylesheet" href="./style/workFlow.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+    <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.css" type="text/css" />
+    <script src="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.js"></script>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-logo">VISIONARY</div>
+        <ul class="nav-links">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/pages/workFlow.html">WorkFlow</a></li>
+            <li><a href="/pages/knownPersons.html">KnownPerson</a></li>
+            <li><a href="/pages/unknownPersons.html">UnknownPerson</a></li>
+            <li><a href="/pages/lastLocation.html">Location</a></li>
+        </ul>
+    </nav>
+
+    <h1 class="Lh">Lidar</h1>
+
+    <div class="module">
+        <div class="module-description">
+            <h3>Lidar</h3>
+            <p>
+                Lidar, which stands for Light Detection and Ranging, is a remote sensing method that uses light in the form of a pulsed laser to measure variable distances to the Earth. This technology generates precise, three-dimensional information about the shape of the Earth and its surface characteristics. Lidar is widely used in geography, archaeology, forestry, geology, seismology, atmospheric physics, and autonomous vehicles for creating detailed topographical maps and for navigation.</p>
+        </div>
+
+        <div class="module-media">
+            <!-- Replace with <img> or <video> as needed -->
+                <img src="./assests/images/lidar.jpg" alt="" srcset="">
+        </div>
+    </div>
+
+    <h1>Upload Person Images</h1>
+
+    <div class="upload-container">
+        <div class="image-section">
+            <video autoplay loop muted playsinline>
+                <source src="./assests/videos/Spec.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="form-section">
+            <form action="/upload" method="post" enctype="multipart/form-data" class="upload-form" id="upload-form">
+                <div class="form-group">
+                    <label for="imageName" class="form-label">Image Name (optional):</label>
+                    <input type="text" id="imageName" name="imageName" class="form-input" placeholder="Enter image name">
+                </div>
+                <div class="drag-area">
+                    <input type="file" name="myImage" accept="image/*" class="file-input" multiple>
+                    <p>Drag or drop images here</p>
+                    <span>or</span>
+                    <label for="file-upload" class="custom-file-upload">Choose a file</label>
+                    <input id="file-upload" type="file" name="myImage" accept="image/*" hidden>
+                    <span>JPG, PNG, JPEG, WEBP, BMP - Max size 5Mb</span>
+                    <span>*All files are stored privately & encrypted. Only you will see them.</span>
+                </div>
+                <button type="submit" class="upload-button">Upload</button>
+                <div class="samples">
+                    <p>Upload the Images of person you Know</p>
+                    <div class="sample-images">
+                        <!-- Thumbnail images go here -->
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div id="uploadModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="modal-text">Your file has been uploaded successfully!</p>
+        </div>
+    </div>
+
+    <h1>Face Recognition</h1>
+
+    <!-- After the upload-container div -->
+    <div class="face-recognition-container">
+        <div class="face-recognition-left">
+            <button class="face-recognition-button" id="faceRecognitionButton">Start Face Recognition</button>
+            <video id="videoElement" autoplay></video>
+            <div id="recognitionResult">Recognition Result: <span id="resultName"></span></div>
+            <div id="objectRecognitionResult">Object Recognition Result: <span id="objectResultName">No Result Yet</span></div>
+        </div>
+        <div class="face-recognition-right">
+            <h2>About This Project</h2>
+            <p>This project is designed to recognize faces using advanced machine learning techniques. It can identify known persons and categorize unknown individuals for further analysis. The aim is to demonstrate the capabilities of AI in the field of image processing and facial recognition.</p>
+            <!-- Add more description as needed -->
+        </div>
+    </div>
+
+    <h1>Get Your Location</h1>
+
+    <div class="location">
+        <div class="location-content">
+            <h2>Azure Maps</h2>
+            <p>Azure Maps offers geospatial services for developers, including interactive map embedding, geocoding, routing, traffic data, spatial analytics, and seamless integration with Azure services. It enables creating location-aware applications with global coverage and rich mapping functionalities.</p>
+        </div>
+        <div class="location-container">
+               <button id="getLocationButton">Show My Location</button>
+               <p id="locationDisplay">Your location will appear here.</p>
+               <div id="myMap" style="height: 400px;"></div>
+         </div>
+    </div> 
+
+    <h1>Convert Doc to Speech</h1>
+
+    <div class="document-section">
+        <div class="upload-area">
+            <input type="file" id="documentInput" accept="image/jpeg,image/png">
+            <button id="readDocumentButton">Read Document</button>
+        </div>
+        <div class="extracted_Text">
+            <h2>Extracted Text</h2>
+            <div class="text-area" id="extractedText">
+                <!-- Extracted text will be displayed here -->
+            </div>
+        </div>
+    </div>
+    
+
+    <script src="./js/script.js"></script>
+    <script src="./js/location.js"></script>
+    <script src="./js/textToSpeech.js"></script>
+</body>
+</html>

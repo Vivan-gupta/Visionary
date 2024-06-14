@@ -1,0 +1,139 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Removed 'display: flex', 'justify-content', and 'align-items' from body to allow normal flow layout */
+
+.heading {
+    font-size: 24px; /* Adjust the size as needed */
+    color: #007bff; /* Heading color */
+    font-weight: bold; /* Make the text bold */
+    text-transform: uppercase; /* Uppercase for a stylized look */
+    text-align: center; /* Center align the text */
+    margin-top: 130px; /* Spacing above and below the heading */
+    margin-bottom: 60px;
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.heading:hover {
+    color: #0056b3; /* Darker shade when hovered */
+    transform: scale(1.05); /* Slightly scale up on hover */
+    cursor: pointer; /* Change cursor to indicate interactivity */
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 3 columns */
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto; /* Adjusted margin for spacing around gallery */
+}
+
+.gallery .image-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3%;
+    background-color: white;
+    border-radius: 14px;
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.7);
+}
+
+.image-card{
+    position: relative;
+}
+
+.delete-button {
+    position: absolute;
+    top: 10px; /* Adjust as needed */
+    background-color: white;
+    right: 10px; /* Adjust as needed */
+    color: black; /* White text for contrast */
+    font-weight: bold; /* Bold font for clarity */
+    border: none; /* No border for a sleek look */
+    border-radius: 14px; /* Circular button */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    cursor: pointer; /* Cursor change to indicate interactivity */
+    width: 30px; /* Slightly larger for easier interaction */
+    height: 30px; /* Match width for circle shape */
+    text-align: center; /* Ensure 'X' is centered */
+    line-height: 30px; /* Vertically center 'X' */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transitions for feedback */
+    margin-right: -7px;
+}
+
+.delete-button:hover {
+    background-color: rgb(231, 229, 229); /* Darker shade on hover for feedback */
+    transform: scale(1.1); /* Slightly enlarge button on hover */
+}
+
+.delete-button:active {
+    background-color: #d50000; /* Even darker shade for active state */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Adjust shadow for pressed effect */
+}
+
+.gallery img {
+    width: 80%;
+    max-height: 280px; /* Control max height */
+    object-fit: cover; /* Maintain aspect ratio */
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.image-name {
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+    word-wrap: break-word;
+    max-width: 250px; /* Match image width */
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    margin-top: 5px;
+    padding: 3px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 5px;
+}
+
+/* Style for the input field */
+.input-field {
+    width: 80%; /* Adjust width as needed */
+    padding: 8px 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    color: #333;
+}
+
+.input-field:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Adds a glow effect when input is focused */
+}
+
+/* Style for the submit button */
+.submit-button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.submit-button:hover {
+    background-color: #0056b3; /* Darker shade for hover state */
+}
+
+.submit-button:active {
+    background-color: #003885; /* Even darker shade for active state */
+}
+

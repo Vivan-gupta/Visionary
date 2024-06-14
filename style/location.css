@@ -1,0 +1,89 @@
+.location {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin: 20px auto;
+    width: 80%;
+    background: #f9f9f9;
+    margin-top: 4%;
+}
+
+.location-content, .location-container {
+    flex: 1;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    height: 430px;
+}
+
+.location-container {
+    height: 500px;
+}
+
+.location-content {
+    background-color: #ffffff;
+    padding: 5%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    transform: translateZ(0); /* For smoother animations */
+}
+
+.location-content h2 {
+    margin-top: 0;
+    font-size: 24px; /* Larger font size for the heading */
+    color: #6C63FF; /* A color that stands out, adjust as needed */
+    text-transform: uppercase; /* Makes the text uppercase */
+    letter-spacing: 1.5px; /* Adds space between letters for clarity */
+    margin-bottom: 15px; /* Spacing between the heading and the paragraph */
+    font-weight: 600; /* Semi-bold font weight */
+}
+
+.location-content p {
+    font-size: 16px; /* Comfortable reading size */
+    color: #333; /* Dark color for readability */
+    line-height: 1.6; /* Adjust line spacing for better readability */
+    text-align: justify; /* Justifies the text for a neat look */
+}
+
+.location-content:hover h2 {
+    color: #0056b3;
+}
+
+#getLocationButton {
+    background-color: #6C63FF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+#getLocationButton:hover {
+    background-color: #5a52e0;
+}
+
+#locationDisplay {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    background: #f8f9fa;
+    width: 95%;
+    text-align: center;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#map {
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin-top: 15px;
+}

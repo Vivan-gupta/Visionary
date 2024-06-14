@@ -1,0 +1,151 @@
+.document-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    width: 80%;
+    background-color: rgb(255, 255, 255);
+    margin-top: 4%;
+}
+
+.document-section:hover {
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.upload-area,
+.text-area {
+    flex-basis: 50%; /* Adjusted to ensure 50% width for each */
+    transition: all 0.3s ease;
+}
+
+.upload-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start; /* Centering content */
+    padding: 3.5%;
+}
+
+.upload-area input[type="file"] {
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 5px 10px;
+    border: 2px solid #007bff;
+    background-color: #fff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.upload-area input[type="file"]:hover,
+.upload-area input[type="file"]:focus {
+    border-color: #0056b3;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Added shadow for depth */
+}
+
+.upload-area button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.upload-area button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05); /* Slight increase in size */
+}
+
+.extracted_Text{
+    width: 50%;
+    padding: 3%;
+}
+
+.extracted_Text h2{
+    margin-top: 0;
+    font-size: 24px; /* Larger font size for the heading */
+    color: #6C63FF; /* A color that stands out, adjust as needed */
+    text-transform: uppercase; /* Makes the text uppercase */
+    letter-spacing: 1.5px; /* Adds space between letters for clarity */
+    margin-bottom: 15px; /* Spacing between the heading and the paragraph */
+    font-weight: 600; /* Semi-bold font weight */
+}
+
+.text-area {
+    border: 1px solid #ccc;
+    padding: 20px; 
+    height: 300px; 
+    overflow-y: auto; 
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern looking font */
+    font-size: 1rem; 
+    line-height: 1.6; 
+    color: #333; 
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1); 
+}
+
+.text-area::before {
+    color: transparent;
+    background: linear-gradient(to right, grey, lightgrey);
+    -webkit-background-clip: text;
+    background-clip: text;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 3.5%;
+    pointer-events: none; /* Allows clicking through to the div below */
+    overflow: hidden;
+}
+
+.text-area:focus-within::before {
+    content: ""; /* Removes the default text when the area is focused */
+}
+
+.text-area:hover {
+    background-color: #e9e9e9;
+    border-color: #b3b3b3; /* Slightly darker border on hover */
+}
+
+/* Optional: Improvements for better readability and spacing */
+body {
+    font-family: Arial, sans-serif; /* Improving font for better readability */
+}
+
+.document-section {
+    margin-bottom: 20px; /* Adding some spacing at the bottom */
+}
+
+
+#documentInput {
+    cursor: pointer;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    padding: 8px 10px;
+    margin-bottom: 10px; /* Space between the input and the button */
+    width: 100%; /* Full width within its parent container */
+    box-sizing: border-box; /* To include padding in the width */
+}
+
+#readDocumentButton {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%; /* Full width within its parent container */
+    box-sizing: border-box; /* To include padding in the width */
+    transition: background-color 0.3s ease;
+}
+
+#readDocumentButton:hover {
+    background-color: #0056b3; /* Slightly darker shade on hover for interaction feedback */
+}
+
+
